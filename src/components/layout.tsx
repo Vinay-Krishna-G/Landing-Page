@@ -1,9 +1,16 @@
+import { useEffect } from "react";
+import { Footer } from "./elements/Footer";
+import { Navbar } from "./elements/Navbar";
+
 interface LayoutProps {
   children: React.ReactNode;
   title: string;
 }
 
 export const Layout = ({ title, children }: LayoutProps) => {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
   return (
     <>
       <Navbar />
